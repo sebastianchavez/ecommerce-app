@@ -1,0 +1,24 @@
+ion-slides {
+    height: 100%;
+  }
+  
+  .slide-1{
+    background: url('../../../assets/imgs/intro_1.jpg') 0 0/100% 100% no-repeat;
+  }
+
+  .slide-2{
+    background: url('../../../assets/imgs/intro_2.jpg') 0 0/100% 100% no-repeat;
+  }
+
+  .slide-3{
+    background: url('../../../assets/imgs/intro_3.jpg') 0 0/100% 100% no-repeat;
+  }
+
+  .footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 8px 16px;
+  }

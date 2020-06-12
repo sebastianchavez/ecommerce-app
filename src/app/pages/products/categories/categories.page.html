@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{category.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container>
+    <ion-row>
+      <ion-col *ngFor="let prod of category.products" size="6" (click)="openProduct(prod)">
+        <ion-card  class="fadeup" [ngClass]="{'fadeup-activate':activeEffect}">
+          <img src="{{prod.img}}" alt="">
+          <ion-card-header>
+            {{prod.subtitle}}
+          </ion-card-header>
+          <ion-card-content>
+            {{prod.title}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+  
+</ion-content>

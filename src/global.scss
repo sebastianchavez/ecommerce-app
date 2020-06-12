@@ -24,3 +24,42 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.back-button-custom {
+    background-color: transparent;
+    margin-top: 5px;
+    font-size: x-large;
+    font-weight: bold;
+    color: gray;
+  }
+
+  .container{
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  .custom-icon{
+      float: right;
+      width: 20px;
+  }
+  
+
+    
+    .fadein{
+        opacity: 0;
+        transition: all 1s ease;
+        &.fadein-activate{
+            opacity: 1;
+        }
+    }
+
+    .fadeup{
+        opacity: 0;
+        top: 50px;
+        transition: all 1s ease;
+        &.fadeup-activate{
+            opacity: 1;
+            top: 0px;
+        }
+    }

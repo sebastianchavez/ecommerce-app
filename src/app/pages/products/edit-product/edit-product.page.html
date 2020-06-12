@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <button  slot="start" (click)="goBack()" class="back-button-custom">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title>{{product.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide [ngStyle]="{'background': 'url(' + product.img + ') 0 0/100% 100% no-repeat'}">
+    </ion-slide>
+  </ion-slides>
+  <div class="container">
+    <h2>{{product.title}}</h2>
+    <h3>Precio unitario: $ {{product.unitPrice | number}}</h3>
+    <h3>Precio total: $ {{product.totalPrice | number}}</h3>
+    <h3>Cantidad: {{product.quantity}}</h3>
+    <ion-button color="secondary">
+      <ion-icon name="remove-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="secondary">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" color="success">
+    Guardar cambios</ion-button>
+</ion-footer>

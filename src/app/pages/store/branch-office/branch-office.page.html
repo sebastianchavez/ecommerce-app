@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sucursales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-select placeholder="Sucursales" expand="full" (ionChange)="changeDirection()" [(ngModel)]="direction">
+      <ion-select-option *ngFor="let dir of directions" [value]="dir">{{dir.title}}</ion-select-option>
+    </ion-select>
+  <div id="mapId" style="width: 100%; height: 93%">
+  </div>
+</ion-content>

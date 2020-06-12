@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Platform, MenuController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Router } from '@angular/router';
+import { Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -13,42 +15,54 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Inicio',
+      url: '/home',
+      icon: 'home'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Carro de compra',
+      url: '/cart',
+      icon: 'cart'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Estado de compra',
+      url: '/tracing',
+      icon:'analytics'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Frutas',
+      url: '/category/1',
+      icon: 'apps'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Ropa',
+      url: '/category/2',
+      icon: 'apps'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Categorias',
+      url: '/list-of-category',
+      icon: 'list'
+    },
+    {
+      title: 'Sucursales',
+      url: '/branch-office',
+      icon: 'business'
+    },
+    {
+      title: 'Acerca de la App',
+      url: '/about',
+      icon: 'information'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    // private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private router: Router,
+    private menu: MenuController
   ) {
     this.initializeApp();
   }
@@ -56,8 +70,13 @@ export class AppComponent implements OnInit {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      SplashScreen.hide();
     });
+  }
+
+  goProfile(){
+    this.menu.close()
+    this.router.navigate(['/profile'])
   }
 
   ngOnInit() {

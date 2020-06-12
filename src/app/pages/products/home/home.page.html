@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nombre de tienda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides pager="true" class="fadein" [ngClass]="{'fadein-activate':activeEffect}">
+    <ion-slide [ngStyle]="{'background': 'url(assets/imgs/home_slide_1.jpg) 0 0/100% 100% no-repeat'}">
+    </ion-slide>
+    <ion-slide [ngStyle]="{'background': 'url(assets/imgs/home_slide_2.jpg) 0 0/100% 100% no-repeat'}">
+    </ion-slide>
+    <ion-slide [ngStyle]="{'background': 'url(assets/imgs/home_slide_3.jpg) 0 0/100% 100% no-repeat'}">
+    </ion-slide>
+    <ion-slide [ngStyle]="{'background': 'url(assets/imgs/home_slide_4.jpg) 0 0/100% 100% no-repeat'}">
+    </ion-slide>
+  </ion-slides>
+
+  <ng-container>
+    <ion-row>
+      <ion-col *ngFor="let prod of products" size="6" (click)="openProduct(prod)">
+        <ion-card class="fadeup" [ngClass]="{'fadeup-activate':activeEffect}">
+          <img src="{{prod.img}}" alt="">
+          <ion-card-header>
+            {{prod.subtitle}}
+          </ion-card-header>
+          <ion-card-content>
+            {{prod.title}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+</ion-content>
